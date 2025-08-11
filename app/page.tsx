@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import { useState, useEffect } from 'react';
+import TopBar from "@/components/navbar";
 
     export default function Home() {
       const [count, setCount] = useState(0);
@@ -69,19 +70,19 @@ import { useState, useEffect } from 'react';
         if (number === max) return 'bg-green-100';
         if (number === min) return 'bg-blue-100';
         return '';
+        <TopBar/>;
       };
     
       return (
-
+        <>
+        <TopBar />
         <div className="min-h-screen bg-red-50 py-12 px-4 sm:px-6 lg:px-8"
-          style={{ backgroundImage: "url('raiqa1.png')" }}
-        >
-          <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl p-6 ml-35 mt-8">
-            <h1 className="text-2xl font-bold text-center mb-6 text-black">RAIQA HEALTH</h1>
+          style={{ backgroundImage: "url('raiqa1.png')" }}>
+          <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-3xl p-6 ml-25 mt-8">
             <h1 className="text-2xl font-bold text-center mb-6 text-black">Number Counter</h1>
             
-            {/* Counter Section */}
-            <div className="mb-8 p-4 border border-gray-200 rounded-lg">
+            
+            <div className="mb-8 p-4 border border-gray-200 rounded-lg w-[550px] mx-auto">
               <div className="flex justify-between items-center mb-4">
                 <button 
                   onClick={decrement}
@@ -148,5 +149,6 @@ import { useState, useEffect } from 'react';
             </div>
           </div>
         </div>
+        </>
       );
     }
